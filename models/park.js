@@ -12,10 +12,6 @@ const Park = function(park_name, ticket_price, collection_of_dinosaurs){
         this.collection_of_dinosaurs.pop();
         }
 
-    Park.prototype.removeHippy = function(){
-        this.collection_of_dinosaurs.pop();
-        }
-
     Park.prototype.mostPopularDino = function(){
         let best_dino;
         let visitor_rate = 0;

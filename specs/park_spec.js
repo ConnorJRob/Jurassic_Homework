@@ -29,7 +29,7 @@ describe('Park', function() {
   });
 
   it('should be able to add a dinosaur to its collection',function(){
-    const new_dino = Dinosaur("Velociraptor","Carnivore","40");
+    const new_dino = Dinosaur("Velociraptor","Carnivore",40);
     park.addDinosaur(new_dino);
     number_of_attractions = park.collection_of_dinosaurs.length;
     assert.deepStrictEqual(number_of_attractions, 4);
