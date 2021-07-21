@@ -31,12 +31,11 @@ describe('Park', function() {
   it('should be able to add a dinosaur to its collection',function(){
     const new_dino = Dinosaur("Velociraptor","Carnivore",40);
     park.addDinosaur(new_dino);
-    number_of_attractions = park.collection_of_dinosaurs.length;
-    assert.deepStrictEqual(number_of_attractions, 4);
+    assert.deepStrictEqual(park.collection_of_dinosaurs, [dinosaur_1, dinosaur_2, dinosaur_3, new_dino])
   });
 
   it('should be able to remove a dinosaur from its collection', function(){
-    park.removeDinosaur();
+    park.removeDinosaur(dinosaur_2);
     number_of_attractions = park.collection_of_dinosaurs.length;
     assert.deepStrictEqual(number_of_attractions, 2);
   });
@@ -56,8 +55,7 @@ describe('Park', function() {
     park.addDinosaur(dinosaur_6);
     species_to_search = "Stegosauras"
     matching_dinos = park.findBySpecies(species_to_search);
-    number_of_steggos = matching_dinos.length;
-    assert.deepStrictEqual(number_of_steggos, 3)
+    assert.deepStrictEqual(matching_dinos, [dinosaur_1, dinosaur_4, dinosaur_5]);
   });
 
   it('should be able to calculate the total number of visitors per day', function(){;

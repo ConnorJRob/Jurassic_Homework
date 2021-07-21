@@ -1,3 +1,5 @@
+const Dinosaur = require("./dinosaur");
+
 const Park = function(park_name, ticket_price, collection_of_dinosaurs){
     this.park_name = park_name;
     this.ticket_price = ticket_price;
@@ -8,8 +10,9 @@ const Park = function(park_name, ticket_price, collection_of_dinosaurs){
         this.collection_of_dinosaurs.push(dinosaur);
         }
 
-    Park.prototype.removeDinosaur = function(){
-        this.collection_of_dinosaurs.pop();
+    Park.prototype.removeDinosaur = function(dinosaur){
+        const index = this.collection_of_dinosaurs.indexOf(dinosaur)
+        this.collection_of_dinosaurs.splice(index, 1)
         }
 
     Park.prototype.mostPopularDino = function(){
